@@ -1,0 +1,12 @@
+.content {
+  display: flex;
+
+  .sidebar {
+    flex: 0 0 18%; //will mot grow or shrink for the given basis
+  }
+
+  .view {
+    background-color: orangered;
+    flex: 1;
+  }
+}
