@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Header.module.scss";
 import logo from "../../../assets/img/logo.png";
 import user from "../../../assets/img/user.jpg";
-import sprite from "../../../assets/img/sprite.svg";
+import Svg from "../../ui/Svg/Svg";
 
 type Props = {};
 
@@ -20,24 +20,18 @@ const Header: React.FC<Props> = () => {
           placeholder={"Search Hotels"}
         />
         <button className={styles.search__button}>
-          <svg className={styles.search__icon}>
-            <use xlinkHref={`${sprite}#icon-magnifying-glass`} />
-          </svg>
+          <Svg className={styles.search__icon} name={"icon-magnifying-glass"} />
         </button>
       </form>
 
       {/*Navigation*/}
       <nav className={styles["user-nav"]}>
         <div className={styles[`user-nav__icon-box`]}>
-          <svg className={styles[`user-nav__icon`]}>
-            <use xlinkHref={`${sprite}#icon-bookmark`} />
-          </svg>
+          <Svg className={styles[`user-nav__icon`]} name={"icon-bookmark"} />
           <span className={styles[`user-nav__notification`]}>7</span>
         </div>
         <div className={styles[`user-nav__icon-box`]}>
-          <svg className={styles[`user-nav__icon`]}>
-            <use xlinkHref={`${sprite}#icon-chat`} />
-          </svg>
+          <Svg className={styles[`user-nav__icon`]} name={"icon-chat"} />
           <span className={styles[`user-nav__notification`]}>13</span>
         </div>
         <div>
