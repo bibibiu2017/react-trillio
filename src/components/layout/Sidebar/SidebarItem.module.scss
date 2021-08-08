@@ -1,0 +1,55 @@
+.item {
+  position: relative;
+
+  &:not(last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: var(--color-primary);
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 3px;
+    transform: scaleY(0);
+    transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+      background-color 0.1s;
+    //First transition transform then width after delay of .2s
+    //cubic bezier to controlling animation acceleration
+  }
+
+  &:active::before {
+    background-color: var(--color-primary-light);
+  }
+
+  &:hover::before,
+  &--active::before {
+    transform: scaleY(1);
+    width: 100%;
+  }
+
+  .link:link,
+  .link:visited {
+    padding: 1.5rem 3rem;
+
+    color: var(--color-grey-light-1);
+    text-decoration: none;
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+
+    z-index: 10;
+    position: relative;
+    //Z-index only works when we have a specified position
+  }
+
+  .icon {
+    margin-right: 2rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: currentColor; //inherit parent color
+  }
+}
