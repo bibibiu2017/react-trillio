@@ -1,3 +1,5 @@
+@import "src/index";
+
 .header {
   font-size: 1.4rem;
   height: 7rem;
@@ -7,6 +9,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media only screen and (max-width: $bp-xs) {
+    flex-wrap: wrap;
+    height: 11rem;
+    align-content: space-around;
+  }
 
   .logo {
     height: 3.25rem;
@@ -18,6 +26,12 @@
     align-items: center;
     justify-content: center;
     flex: 0 0 40%;
+
+    @media only screen and (max-width: $bp-xs) {
+      order: 1;
+      flex: 0 0 100%;
+      background-color: var(--color-grey-light-2);
+    }
 
     &__input {
       padding: 0.7rem 2rem;
@@ -84,6 +98,10 @@
       min-height: 100%;
       display: flex;
       align-items: center;
+
+      @media only screen and (max-width: $bp-sm) {
+        padding: 0 0.5rem;
+      }
     }
 
     & > *:hover {

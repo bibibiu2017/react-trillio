@@ -82,6 +82,7 @@ const HotelView: React.FC<Props> = ({ hotel, ...props }) => {
                 .reverse()
                 .map((rec) => (
                   <img
+                    key={rec.name}
                     src={rec.image}
                     alt={rec.name}
                     className={styles.recommend__photo}

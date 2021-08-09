@@ -1,8 +1,18 @@
+@import "src/assets/scss/main";
+
 .item {
   position: relative;
 
+  @media only screen and (max-width: $bp-md) {
+    flex: 1;
+  }
+
   &:not(last-child) {
     margin-bottom: 0.5rem;
+
+    @media only screen and (max-width: $bp-md) {
+      margin-bottom: 0;
+    }
   }
 
   &::before {
@@ -44,6 +54,17 @@
     z-index: 10;
     position: relative;
     //Z-index only works when we have a specified position
+
+    @media only screen and (max-width: $bp-md) {
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem 0.5rem;
+    }
   }
 
   .icon {
@@ -51,5 +72,12 @@
     width: 1.75rem;
     height: 1.75rem;
     fill: currentColor; //inherit parent color
+
+    @media only screen and (max-width: $bp-sm) {
+      margin-right: 0;
+      margin-bottom: 0.7rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }

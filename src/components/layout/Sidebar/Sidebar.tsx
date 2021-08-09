@@ -20,7 +20,11 @@ const Sidebar: React.FC<Props> = (props) => {
     <nav className={`${props.className} ${styles.sidebar}`}>
       <ul className={styles[`side-nav`]}>
         {sidebarItems.map((item) => (
-          <SidebarItem item={item} key={item.name} />
+          <SidebarItem
+            item={item}
+            key={item.name}
+            className={styles[`side-nav__item`]}
+          />
         ))}
       </ul>
 
